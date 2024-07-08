@@ -11,218 +11,368 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <View
-            android:id="@+id/v_top"
-            android:layout_width="match_parent"
-            android:layout_height="286dp"
-            android:background="@drawable/home_banner_rounded" />
 
         <Space
-            android:id="@+id/src_atop"
+            android:id="@+id/s_top"
             android:layout_width="wrap_content"
-            android:layout_height="40dp" />
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:id="@+id/tv_welcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/src_atop"
-            android:layout_marginHorizontal="24dp"
-            android:text="Good afternoon,"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/tv_fulllname"
+        <ImageView
+            android:id="@+id/iv_arrow_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_welcome"
-            android:layout_marginHorizontal="24dp"
-            android:text="Geri Abdul Malik"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/s_top"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_arrow_left" />
 
-        <FrameLayout
-            android:id="@+id/fl_notification"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/src_atop"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="249dp"
-            android:layout_marginEnd="24dp"
-            android:background="@drawable/bg_radius_small">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ll_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/s_top"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="50dp">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_bell_default" />
-        </FrameLayout>
+                android:background="#F5F5F5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_calendar_today" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8 Juli 2024" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/s_top"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_arrow_right" />
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_balance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/fl_notification"
+            android:layout_below="@+id/ll_date"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="30dp"
             android:elevation="1dp"
-            app:cardBackgroundColor="@color/tertiary"
             app:cardCornerRadius="20dp">
 
-            <RelativeLayout
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:paddingHorizontal="20dp"-->
+            <!--                android:paddingVertical="24dp">-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_text_balance"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="@string/text_title_home_total_balance"-->
+            <!--                    android:textSize="16sp"-->
+            <!--                    app:drawableEndCompat="@drawable/ic_chevron_down" />-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/iv_more_vert"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_marginStart="189dp"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:layout_toEndOf="@id/tv_text_balance"-->
+            <!--                    android:src="@drawable/ic_more_vert"-->
+            <!--                    app:tint="@color/black" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_total_balance"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@+id/tv_text_balance"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:text="@string/text_default_currency"-->
+            <!--                    android:textSize="30sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    android:visibility="invisible" />-->
+
+            <!--                <com.facebook.shimmer.ShimmerFrameLayout-->
+            <!--                    android:id="@+id/sfl_total_balance"-->
+            <!--                    android:layout_width="200dp"-->
+            <!--                    android:layout_height="25dp"-->
+            <!--                    android:layout_below="@+id/tv_text_balance"-->
+            <!--                    android:layout_marginTop="16dp"-->
+            <!--                    app:shimmer_duration="3000"-->
+            <!--                    app:shimmer_intensity="0.7">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:background="@drawable/bg_shape_white_default" />-->
+
+            <!--                </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/iv_arrow_down"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@+id/tv_total_balance"-->
+            <!--                    android:layout_marginTop="30dp"-->
+            <!--                    android:importantForAccessibility="no"-->
+            <!--                    android:src="@drawable/ic_arrow_down_rounded"-->
+            <!--                    app:tint="@color/grey" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@id/tv_total_balance"-->
+            <!--                    android:layout_marginStart="6dp"-->
+            <!--                    android:layout_marginTop="30dp"-->
+            <!--                    android:layout_toRightOf="@+id/iv_arrow_down"-->
+            <!--                    android:text="@string/text_title_income"-->
+            <!--                    android:textSize="16sp" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_income"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@+id/iv_arrow_down"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:text="@string/text_default_currency"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    android:visibility="invisible" />-->
+
+            <!--                <com.facebook.shimmer.ShimmerFrameLayout-->
+            <!--                    android:id="@+id/sfl_total_income"-->
+            <!--                    android:layout_width="100dp"-->
+            <!--                    android:layout_height="25dp"-->
+            <!--                    android:layout_below="@+id/iv_arrow_down"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    app:shimmer_duration="3000"-->
+            <!--                    app:shimmer_intensity="0.7">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:background="@drawable/bg_shape_white_default" />-->
+
+            <!--                </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_title_expense"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@id/tv_total_balance"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_marginTop="30dp"-->
+            <!--                    android:text="Expenses"-->
+            <!--                    android:textSize="16sp" />-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/iv_arrow_up"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@+id/tv_total_balance"-->
+            <!--                    android:layout_marginTop="30dp"-->
+            <!--                    android:layout_marginEnd="8dp"-->
+            <!--                    android:layout_toStartOf="@id/tv_title_expense"-->
+            <!--                    android:src="@drawable/ic_arrow_top_rounded"-->
+            <!--                    app:tint="@color/grey" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_expense"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@+id/iv_arrow_up"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:layout_marginEnd="8dp"-->
+            <!--                    android:text="@string/text_default_currency"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    android:textStyle="bold" />-->
+
+            <!--                <com.facebook.shimmer.ShimmerFrameLayout-->
+            <!--                    android:id="@+id/sfl_total_expense"-->
+            <!--                    android:layout_width="100dp"-->
+            <!--                    android:layout_height="25dp"-->
+            <!--                    android:layout_below="@+id/iv_arrow_up"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    app:shimmer_duration="3000"-->
+            <!--                    app:shimmer_intensity="0.7">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:background="@drawable/bg_shape_white_default" />-->
+
+            <!--                </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+            <!--            </RelativeLayout>-->
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="24dp">
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_text_balance"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_title_home_total_balance"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    app:drawableEndCompat="@drawable/ic_chevron_down" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <ImageView
-                    android:id="@+id/iv_more_vert"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="189dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/tv_text_balance"
-                    android:src="@drawable/ic_more_vert" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_payment_black" />
 
-                <TextView
-                    android:id="@+id/tv_total_balance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_text_balance"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/text_default_currency"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:visibility="invisible" />
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/sfl_total_balance"
-                    android:layout_width="200dp"
-                    android:layout_height="25dp"
-                    android:layout_below="@+id/tv_text_balance"
-                    android:layout_marginTop="16dp"
-                    app:shimmer_duration="3000"
-                    app:shimmer_intensity="0.7">
-
-                    <View
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_expense"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_shape_white_default" />
+                        android:layout_marginTop="6dp"
+                        android:textColor="#E53935"
+                        android:visibility="gone"
+                        tools:text="50RB" />
 
-                </com.facebook.shimmer.ShimmerFrameLayout>
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/sfl_total_expense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="6dp"
+                        app:shimmer_duration="3000"
+                        app:shimmer_intensity="0.7">
 
-                <ImageView
-                    android:id="@+id/iv_arrow_down"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_total_balance"
-                    android:layout_marginTop="30dp"
-                    android:importantForAccessibility="no"
-                    android:src="@drawable/ic_arrow_down_rounded" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_shape_white_default" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_total_balance"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_toRightOf="@+id/iv_arrow_down"
-                    android:text="@string/text_title_income"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    </com.facebook.shimmer.ShimmerFrameLayout>
 
-                <TextView
-                    android:id="@+id/tv_income"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/iv_arrow_down"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/text_default_currency"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:visibility="invisible" />
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/sfl_total_income"
-                    android:layout_width="100dp"
-                    android:layout_height="25dp"
-                    android:layout_below="@+id/iv_arrow_down"
-                    android:layout_marginTop="8dp"
-                    app:shimmer_duration="3000"
-                    app:shimmer_intensity="0.7">
-
-                    <View
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_shape_white_default" />
+                        android:text="Expenses" />
+                </LinearLayout>
 
-                </com.facebook.shimmer.ShimmerFrameLayout>
-
-                <TextView
-                    android:id="@+id/tv_title_expense"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_total_balance"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="30dp"
-                    android:text="Expenses"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <ImageView
-                    android:id="@+id/iv_arrow_up"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_total_balance"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@id/tv_title_expense"
-                    android:src="@drawable/ic_arrow_top_rounded" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_account_wallet" />
 
-                <TextView
-                    android:id="@+id/tv_expense"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/iv_arrow_up"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/text_default_currency"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/sfl_total_expense"
-                    android:layout_width="100dp"
-                    android:layout_height="25dp"
-                    android:layout_below="@+id/iv_arrow_up"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="8dp"
-                    app:shimmer_duration="3000"
-                    app:shimmer_intensity="0.7">
-
-                    <View
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_total_balance"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_shape_white_default" />
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone"
+                        tools:text="50RB" />
 
-                </com.facebook.shimmer.ShimmerFrameLayout>
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/sfl_total_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="6dp"
+                        app:shimmer_duration="3000"
+                        app:shimmer_intensity="0.7">
 
-            </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_shape_white_default" />
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Balance" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_account_bank" />
+
+                    <TextView
+                        android:id="@+id/tv_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#212121"
+                        android:visibility="gone"
+                        tools:text="50RB" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/sfl_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="6dp"
+                        app:shimmer_duration="3000"
+                        app:shimmer_intensity="0.7">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_shape_white_default" />
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Income" />
+                </LinearLayout>
+
+            </LinearLayout>
 
 
         </androidx.cardview.widget.CardView>

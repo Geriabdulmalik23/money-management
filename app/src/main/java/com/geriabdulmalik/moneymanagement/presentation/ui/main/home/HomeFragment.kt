@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.geriabdulmalik.moneymanagement.databinding.FragmentHomeBinding
 import com.geriabdulmalik.moneymanagement.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,7 +37,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), AppObserver {
     @SuppressLint("SetTextI18n")
     override fun onViewModelObserver() {
         mViewModel.getTransactions().observe(viewLifecycleOwner) {
-
+            Toast.makeText(context, "Halo", Toast.LENGTH_SHORT).show()
             views.apply {
 
                 tvTotalBalance.text = it.totalBalance?.asDigit(prefix = "RP")
