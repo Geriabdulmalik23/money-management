@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Money Management</string>
+    <string name="text_title">GEER</string>
+    <string name="onboarding_text_bottom">spend smarter \n save more</string>
+    <string name="onboarding_text_bottom_get_started">Get Started</string>
+    <string name="onboarding_text_i_have_account">Already have account?</string>
+    <string name="onboarding_text_login">Log In</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_default_currency">RP0</string>
+    <string name="text_title_income">Income</string>
+    <string name="text_title_home_total_balance">Total balance</string>
+</resources>
